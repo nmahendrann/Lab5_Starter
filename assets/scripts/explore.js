@@ -1,6 +1,6 @@
-window.addEventListener('DOMContentLoaded', initializeSpeechSynthesis);
+window.addEventListener('DOMContentLoaded', init);
 
-function initializeSpeechSynthesis() {
+function init() {
   const speechSynthesizer = window.speechSynthesis;
   const textInput = document.getElementById('text-to-speak');
   const voiceDropdown = document.getElementById('voice-select');
@@ -23,7 +23,7 @@ function initializeSpeechSynthesis() {
   if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = loadVoices;
   }
-
+/*
   speakButton.addEventListener('click', () => {
     speakText(textInput, voiceDropdown, speechSynthesizer, faceImage, availableVoices);
   });
@@ -43,8 +43,9 @@ function speakText(textInput, voiceDropdown, speechSynthesizer, faceImage, avail
 function getVoiceByName(name, availableVoices) {
   for(let i = 0; i < availableVoices.length ; i++) {
     if(availableVoices[i].name === name) {
-      return availableVoices[i];
+      utterance.voice = availableVoices[i];
     }
   }
   return null;
+  */
 }
