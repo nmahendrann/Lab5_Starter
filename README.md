@@ -2,5 +2,5 @@
 
 Nikhil Mahendran
 
-Expose: https://nmahendrann.github.io/Lab5_Starter/expose.html
+Expose: https://nmahendrann.github.io/Lab5_Starter/expose.html <br/>
 Explore: 
