@@ -23,29 +23,25 @@ function init() {
   if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = loadVoices;
   }
-/*
-  speakButton.addEventListener('click', () => {
-    speakText(textInput, voiceDropdown, speechSynthesizer, faceImage, availableVoices);
-  });
-}
 
-function speakText(textInput, voiceDropdown, speechSynthesizer, faceImage, availableVoices) {
-  const utterance = new SpeechSynthesisUtterance(textInput.value);
-  const selectedVoiceName = voiceDropdown.selectedOptions[0].getAttribute('data-name');
-  utterance.voice = getVoiceByName(selectedVoiceName, availableVoices);
-  speechSynthesizer.speak(utterance);
-  faceImage.src = 'assets/images/smiling_open.png'; 
-  utterance.onend = function(event) {
-    faceImage.src = 'assets/images/smiling.png';
-  }
+  speakButton.addEventListener('click', () => {
+    const utterance = new SpeechSynthesisUtterance(textInput.value);
+    const selectedVoiceName = voiceDropdown.selectedOptions[0].getAttribute('data-name');
+    utterance.voice = getVoiceByName(selectedVoiceName, availableVoices);
+    speechSynthesizer.speak(utterance);
+    faceImage.src = 'assets/images/smiling_open.png'; 
+    utterance.onend = function(event) {
+      faceImage.src = 'assets/images/smiling.png';
+    }
+  });
 }
 
 function getVoiceByName(name, availableVoices) {
   for(let i = 0; i < availableVoices.length ; i++) {
     if(availableVoices[i].name === name) {
-      utterance.voice = availableVoices[i];
+      return availableVoices[i];
     }
   }
   return null;
-  */
+  
 }
